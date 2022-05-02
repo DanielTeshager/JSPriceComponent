@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;700&family=Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+<link rel="stylesheet" href="./css/style.css">  
   <title>Interactive pricing component</title>
 
 </head>
@@ -23,7 +25,7 @@ Sign-up for our 30-day trial. No credit card required.
   <div class="card main-card">
     <div class="card-header">
       <h3 class="card-title">
-        100k Pages Views
+        100k Pageviews
       </h3>
     </div>
     <div class="card-body">
@@ -31,50 +33,59 @@ Sign-up for our 30-day trial. No credit card required.
         <div class="slider-bar">
           <div class="slider-bar-fill"></div>
           <div class="slider-marker">
-            <span class="left-arrow"></span>
-            <span class="right-arrow"></span>
+            <img src="./images/icon-slider.svg" alt="slider icon">
           </div>
         </div>
       </div>
       <div class="price-container">
-        <h3 class="price"><span class="currency">$</span><span class="value">16</span><span class="term">/month</span></h3>
+        <h3 class="price"><span class="currency">$</span><span class="value">16.00 </span><span class="term">/month</span></h3>
       </div>
       <div class="billing-cycle">
-        <h3 class="billing-cycle-title">
-          Monthly
-        </h3>
+        <p class="billing-cycle-title">
+          Monthly Billing 
+        </p>
         <!-- toggle switch monthly vs yearly -->
         <div class="toggle-switch">
-          <input type="checkbox" id="toggle-switch">
-          <label for="toggle-switch">
-            <span class="toggle-switch-slider">Yearly</span>
+          <input type="checkbox" id="switch"
+          class="checkbox" />
+          <label for="switch" class="toggle">
           </label>
-          <span class="discount">
-            -20%
-          </span>
-      </div>
-    </div>
+          </div>
+            <span class="toggle-switch-slider">Yearly Billing</span>
+            <span class="discount">-20%</span>
+        </div>
+
   </div>
+  <hr>
+  <div class="card-features">
+    <ul class="features-list">
+      <li>
+        <!-- checkmark -->
+        <img src="./images/icon-check.svg" alt="checkmark">
+        Unlimited websites
+        </li>
+        <li>
+        <!-- checkmark -->
+        <img src="./images/icon-check.svg" alt="checkmark">
+        100% data ownership
+        </li>
+        <li>
+          <!-- checkmark -->
+        <img src="./images/icon-check.svg" alt="checkmark">
+         Email reports
+        </li>
+      </ul>
+      <button class="btn trial">Start my trial</button>
+  
+  </div>
+
+  </div>  
+
+
+  
+
 </div>
 </main>
-  
-  
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<script src="./js/app.js"></script>
 </body>
 </html>

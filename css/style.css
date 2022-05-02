@@ -1,0 +1,299 @@
+:root{
+    --main-bg-color: rgb(242,245,254);
+    --loving-green: rgb(18,216,196);
+    --light-green: rgb(130,255,242);
+    --loving-gray: rgb(139,146,169);
+    --navy-blue: rgb(41,51,86);
+    --orange-bg: rgb(255,237,232);
+    --loving-orange: rgb(249,168,141);
+    --whiter-than-white: rgb(255,255,255);
+    --light-gray: rgb(242,245,254);
+    --circles-gray: rgb(211, 217, 234);
+}
+
+/* 
+The great big reset
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'kumbs sans', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body{
+    background-color: var(--whiter-than-white);
+}
+main{
+    min-height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+}
+main::before{
+    content: '';
+    display: block;
+    height: 150vh;
+    /* background-color: var(--main-bg-color); */
+    background: var(--main-bg-color);
+    position: absolute;
+    top: -90vh;
+    left: -20vh;
+    width: 150vw;
+    border-radius: 50%;
+    z-index: -1;
+}
+header{
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    margin: 4rem auto 2rem;
+}
+
+header .header-title{
+    font-size: 1.5rem;
+    color: var(--navy-blue);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+    position: relative;
+}
+header .header-title::before{
+    content: '';
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    background: transparent;
+    border: 1px solid rgb(211, 217, 234);
+    left: 33%;
+    top: 6%;
+}
+header .header-tagline:before{
+    content: '';
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    background: transparent;
+    border: 1px solid rgb(211, 217, 234);
+    left: 53%;
+    top: 6%;
+}
+header .header-tagline{
+    font-size: .8rem;
+    color: var(--navy-blue);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    padding: 0 5.5rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.container{
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+/* .cards{
+    display: flex;
+    flex-direction: column;
+    gap:.2rem;
+} */
+.card{
+    width:100%;
+    /* background-color: var(--main-bg-color); */
+    box-shadow: 0 0 .1rem rgba(0,0,0,0.2);
+    /* padding: 2rem; */
+    border-radius: .2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: .2rem;
+    background-color: var(--whiter-than-white);
+    max-width: 30rem;
+}
+
+.card-title{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--loving-gray);
+    margin-bottom: 1rem;
+    padding: 2rem;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+.slider-bar{
+    width: 100%;
+    height: .5rem;
+    background-color: var(--loving-gray);
+    border-radius: .5rem;
+    position: relative;
+    /* overflow: hidden; */
+}
+.slider-bar-fill{
+    width: 10%;
+    height: 100%;
+    background-color: var(--light-green);
+    border-radius: .5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width .5s ease-in-out;
+}
+
+.slider-marker{
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--loving-green);
+    border-radius: 50%;
+    position: absolute;
+    top: -.7rem;
+    left: 0;
+    transition: left .5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 .2rem .7rem var(--loving-green);
+}
+
+.price-container{
+    text-align: center;
+}
+.price-container .price, .price-container .currency{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'kumbh sans', sans-serif;
+} 
+
+.price-container .term{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--loving-gray)
+}
+
+.billing-cycle{
+    display: flex;
+    justify-content: center;
+    font-family: roboto slad, sans-serif;
+    font-size: .8rem;
+    color: var(--loving-gray);
+    align-items: center;
+    gap: 1rem;
+}
+
+.billing-cycle p{
+    font-family: Roboto slad, sans-serif;
+}
+
+/* make toggle switch button */
+#toggle-switch{
+    position : relative ;
+    display : inline-block;
+    width : 2rem;
+    height : 1.5rem;
+    background-color: red;
+    border-radius: .2rem;
+    border: 2px solid gray;
+}
+#toggle-switch::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 1px; 
+    left: 1px;
+    transition:  all 0.5s;
+}
+
+input[checkbox]:checked + input[checkbox]::after {
+    left : 49px; 
+}
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 2.3rem;
+    height: 1.18rem;
+    background-color: var(--loving-gray);
+    border-radius: .7rem;
+}
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--whiter-than-white);
+    top: 1px; 
+    left: 1px;
+    transition:  all 0.5s;
+}
+.checkbox:checked + .toggle::before {
+    left : 1.25rem
+}
+.checkbox{
+    display: none;
+}
+
+.discount{
+    background-color: var(--orange-bg);
+    color:var(--loving-orange);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem .5rem;
+}
+
+.card-features{
+    margin-top: 2rem;
+    padding-bottom: 1rem; 
+}
+.card-features button{
+    width: 100%;
+    height: 2rem;
+    background-color: var(--loving-green);
+    border-radius: .2rem;
+    border: none;
+    color: var(--whiter-than-white);
+    font-size: .8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: background-color .5s ease-in-out;
+}
+.card-features ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+ margin-bottom: 1rem;
+}
+hr{
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: var(--light-gray);
+}
