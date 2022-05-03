@@ -26,32 +26,33 @@ The great big reset
 
 body{
     background-color: var(--whiter-than-white);
+    overflow-x: hidden;
 }
 main{
     min-height: 100vh;
     text-align: center;
     margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-main::before{
-    content: '';
-    display: block;
-    height: 150vh;
-    /* background-color: var(--main-bg-color); */
-    background: var(--main-bg-color);
-    position: absolute;
-    top: -90vh;
-    left: -20vh;
-    width: 150vw;
-    border-radius: 50%;
-    z-index: -1;
-}
+
 header{
-    width: 90vw;
+    width: 100%;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
-    margin: 4rem auto 2rem;
+    padding: 4rem 0;
+    background-image: url(../images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+    background-position: top;
+    margin: 2rem 0;
 }
 
 header .header-title{
@@ -60,7 +61,7 @@ header .header-title{
     font-weight: 400;
     margin-bottom: 1rem;
     margin-bottom: .5rem;
-    position: relative;
+    width: 50ch;
 }
 header .header-title::before{
     content: '';
@@ -72,8 +73,9 @@ header .header-title::before{
     z-index: -1;
     background: transparent;
     border: 1px solid rgb(211, 217, 234);
-    left: 33%;
-    top: 6%;
+    left: 40vw;
+    top: -1vh;
+
 }
 header .header-tagline:before{
     content: '';
@@ -95,7 +97,8 @@ header .header-tagline{
     margin-bottom: 1rem;
     padding: 0 5.5rem;
     line-height: 1.5;
-    position: relative;
+    width: 48ch;
+
 }
 
 .container{
@@ -112,7 +115,7 @@ header .header-tagline{
     gap:.2rem;
 } */
 .card{
-    width:100%;
+    /* width:clamp(20rem, 100%); */
     /* background-color: var(--main-bg-color); */
     box-shadow: 0 0 .1rem rgba(0,0,0,0.2);
     /* padding: 2rem; */
@@ -123,7 +126,10 @@ header .header-tagline{
     align-items: center; 
     gap: .2rem;
     background-color: var(--whiter-than-white);
-    max-width: 30rem;
+    /* max-width: 30rem;
+    min-width: 10rem; */
+    width: min(1000px, calc(70% + 100px));
+    flex-shrink: 0;
 }
 
 .card-title{
@@ -196,7 +202,7 @@ header .header-tagline{
     display: flex;
     justify-content: center;
     font-family: roboto slad, sans-serif;
-    font-size: .8rem;
+    font-size: .6rem;
     color: var(--loving-gray);
     align-items: center;
     gap: 1rem;
