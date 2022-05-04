@@ -39,7 +39,7 @@ const price_object = {
     currency: '$',
     billing_term: ' /monthly',
     increment_factor: 0,
-    dicount_factor: 0,
+    dicount_factor: 1,
     previous_price: 16,
 }
 
